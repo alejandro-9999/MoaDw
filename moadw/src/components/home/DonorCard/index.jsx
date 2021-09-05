@@ -28,9 +28,9 @@ export default function DonorCard({ donor_name, total, image,index }) {
 
                     <div className="donations-content">
                         <p className="total-donations" >
-                            <a > Total Donations </a>
+                            <span > Total Donations </span>
                             <br />
-                                <a className="number-donations">{total}</a>
+                                <span className="number-donations">{total}</span>
                         </p>
                        
                     </div>

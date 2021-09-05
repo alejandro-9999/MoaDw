@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 import { getDonorAction } from "../../redux/donorDuck";
 
 
-function Detail({fetching, detail,have_detail,getDonorAction}) {
+function Detail({fetching, detail,getDonorAction}) {
     
     let formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
@@ -27,7 +27,7 @@ function Detail({fetching, detail,have_detail,getDonorAction}) {
     useEffect(() => {
         getDonorAction(index);
         
-    }, [index]);
+    }, [index,getDonorAction]);
 
     useEffect(() => {
         
@@ -105,11 +105,10 @@ function Detail({fetching, detail,have_detail,getDonorAction}) {
 }
 
 
-function mapState({ donor: { fetching, detail,have_detail } }) {
+function mapState({ donor: { fetching, detail } }) {
     return {
         fetching,
         detail,
-        have_detail
     }
 }
 

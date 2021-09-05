@@ -51,7 +51,7 @@ export default function reducer(state=initialData,action){
 ///actions 
 export let getDonorsAction = (skip,limit,sort) => (dispatch,getState) => {
    
-    let QUERY = URL+"find-many?"+"skip="+skip+"&limit="+limit+"&sort="+sort;
+    let QUERY = URL+"find-many?skip="+skip+"&limit="+limit+"&sort="+sort;
     dispatch({
         type:GET_DONORS
     })
