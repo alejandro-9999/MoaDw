@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from "react";
 import './home-module.css';
 import logo from '../../assets/home/Logo.svg'
-import SelectOrder from "./SelectOrder/indes";
+import SelectOrder from "./SelectOrder";
 import DonorCard from "./DonorCard";
 import { connect } from 'react-redux';
 import { getDonorsAction } from "../../redux/donorDuck";

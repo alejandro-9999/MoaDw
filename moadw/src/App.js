@@ -2,12 +2,15 @@
 import './App.css';
 import Routes from './Routes';
 
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
   return (
     <div className={"content"}>
       <div className="circulo"></div>
-      <Routes />
+      <BrowserRouter>
+        <Routes />
+      </BrowserRouter>
     </div>
   );
 }
