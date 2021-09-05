@@ -1,11 +1,31 @@
 body {
+  
+  
+
+
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Montserrat', sans-serif;
+  background-color:#000000;
+
+  }
+
+body .circulo{
+  /* Ellipse 24 */
+
+position: absolute;
+width: 592.61px;
+height: 722.3px;
+left: -298px;
+top: -390.81px;
+
+background: radial-gradient(50% 50% at 50% 50%, #9FC3F9 0%, rgba(159, 195, 249, 0) 100%);
+opacity: 0.4;
+transform: rotate(-0.31deg);
+
 }
+
+
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
