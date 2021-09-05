@@ -1,0 +1,62 @@
+import axios from "axios";
+
+
+//
+let initialData = {
+    fetching:false,
+    array:[],
+
+}
+
+let URL = "https://moadw-challenge.herokuapp.com/api/find-many?";
+
+
+// const 
+let GET_DONORS =  "GET_DONORS";
+let GET_DONORS_SUCCESS =  "GET_DONORS_SUCCESS";
+let GET_DONORS_ERROR =  "GET_DONORS_ERROR";
+
+
+
+
+//reducer 
+export default function reducer(state=initialData,action){
+    switch(action.type){
+      
+        case GET_DONORS:
+            return {...state,fetching:true}
+        case GET_DONORS_SUCCESS:
+            return {...state,array:action.payload,fetching:false}
+        case GET_DONORS_ERROR:
+            return {...state,fetching:false,error:action.payload}
+        default:
+            return state;
+    }
+}
+
+
+///actions 
+export let getDonorsAction = (skip,limit,sort) => (dispatch,getState) => {
+   
+    let QUERY = URL+"skip="+skip+"&limit="+limit+"&sort="+sort;
+    dispatch({
+        type:GET_DONORS
+    })
+
+    return axios.get(QUERY)
+        .then(res=>{
+            
+            dispatch({
+                type:GET_DONORS_SUCCESS,
+                payload:res.data
+            })
+        })
+        .catch(err=>{
+           
+            dispatch({
+                type:GET_DONORS_ERROR,
+                payload:"ERROR"
+            })
+        })
+}
+

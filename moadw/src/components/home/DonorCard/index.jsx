@@ -1,9 +1,16 @@
 import React from "react";
 import './donorcard-module.css'
-import avatar from '../../../assets/card/avatar.svg'
+
 import icon_arrow from '../../../assets/card/icon-arrow.svg'
 
-export default function DonorCard({ donor_name, total, img }) {
+
+
+
+
+export default function DonorCard({ donor_name, total, image }) {
+    
+    
+   
     return (
 
 
@@ -11,7 +18,7 @@ export default function DonorCard({ donor_name, total, img }) {
             <div className="grounded-radiants">
                 <div className="container-content">
                     <div className="avatar-card">
-                         <img src={avatar} alt={avatar} />
+                         <img src={image} alt={image} />
                     </div>
                         <p className="donor-name" >{donor_name}</p>
                    

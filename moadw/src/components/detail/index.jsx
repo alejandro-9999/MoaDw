@@ -1,14 +1,34 @@
-import React from "react";
+import React,{useEffect,useState} from "react";
 import logo from '../../assets/home/Logo.svg';
 import icon_arrow from '../../assets/card/icon-arrow.svg';
 import avatar from '../../assets/card/avatar.svg'
+import { useHistory, useParams } from "react-router";
 import './detail-module.css';
 
 export default function Detail() {
+    
+    
+    
+    const {id} = useParams();
+
+    const[index] =  useState(id);
+
+    let history = useHistory();
+
+    useEffect(() => {
+        console.log(index);
+    }, [index]);
+
+    const redirect = () => {
+        history.push('/')
+    }
+
+    
+    
     return (
         <div className="detail_home" >
-            <button className="back-button">
-                <img src={icon_arrow} alt={icon_arrow} />
+            <button className="back-button"   onClick={redirect}>
+                <img src={icon_arrow} alt={icon_arrow}/>
             </button>
             <div className="title">
 
@@ -49,8 +69,8 @@ export default function Detail() {
                 </div>
             </div>
             <div className="buton-container">
-                                <button>MAKE A DONATION</button>
-                            </div>
+                <button>MAKE A DONATION</button>
+            </div>
         </div>
 
     );
