@@ -47,7 +47,7 @@ function Home({ fetching, array, getDonorsAction }) {
                
                {
                    array.map((element,key)=>(
-                    <DonorCard key={key} donor_name={element.first_name+" "+element.last_name} total={element.donations} image={element.image} />
+                    <DonorCard key={key} donor_name={element.first_name+" "+element.last_name} total={element.donations} image={element.image} index={element.id} />
                    ))
                }
             </div>

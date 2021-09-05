@@ -2,14 +2,16 @@ import React from "react";
 import './donorcard-module.css'
 
 import icon_arrow from '../../../assets/card/icon-arrow.svg'
+import { useHistory } from "react-router";
 
 
 
-
-
-export default function DonorCard({ donor_name, total, image }) {
+export default function DonorCard({ donor_name, total, image,index }) {
     
-    
+    const history = useHistory();
+    const goDetail = () =>{
+        history.replace('/detail/'+index);
+    }    
    
     return (
 
@@ -32,7 +34,7 @@ export default function DonorCard({ donor_name, total, image }) {
                         </p>
                        
                     </div>
-                    <button className="detail-button">
+                    <button className="detail-button" onClick={goDetail}>
                         <img src={icon_arrow} alt={icon_arrow} />
                     </button>
 
